@@ -1,0 +1,1058 @@
+/*
+ * [Modified] Modern CSS Reset
+ * @link https://github.com/hankchizljaw/modern-css-reset
+*/
+/* Box sizing rules */
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,600;1,600&display=swap");
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+  overflow-x: hidden;
+}
+
+/* Make images easier to work with */
+img {
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:root {
+  --Blue: #4f7df3;
+  --PaleBlue: hsl(223, 100%, 88%);
+  --LightRed: #ff5263;
+  --Gray: rgb(150, 150, 150);
+  --VeryDarkBlue: hsl(209, 33%, 12%);
+}
+
+.mainContainer2 {
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(#1f3756, #141539);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.gameHeader2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: white;
+  width: 50vw;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+  margin: 3vw;
+  padding: 2vw 2vw;
+}
+
+.gameHeader2 .gameName {
+  line-height: 160%;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+}
+
+.gameHeader2 .score {
+  background-color: white;
+  height: 100%;
+  padding: 0px 5%;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.gameHeader2 .score .scoreTitle {
+  color: #2a46c0;
+  text-transform: uppercase;
+  letter-spacing: 0px;
+  line-height: 100%;
+}
+
+.gameHeader2 .score .actualScore {
+  color: #3b4363;
+  font-size: 4rem;
+  line-height: 100%;
+}
+
+.game2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 10vh;
+}
+
+.game2 .pentagon {
+  height: 300px;
+  width: 300px;
+  background: url(../images/bg-pentagon.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.game2 .first {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.game2 .first .scissor {
+  background: white;
+  height: 120px;
+  width: 120px;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  border: 10px solid #eca922;
+  -webkit-box-shadow: 0px 0px 0px 2px #4865f4, 0px 0px 0px 5px #dc2e4e, 0px 0px 0px 10px #40b9ce, 0px 0px 0px 15px #834fe3, 0px 0px 0px 20px #ec9e0e, 0px 0px 30px 0px white;
+          box-shadow: 0px 0px 0px 2px #4865f4, 0px 0px 0px 5px #dc2e4e, 0px 0px 0px 10px #40b9ce, 0px 0px 0px 15px #834fe3, 0px 0px 0px 20px #ec9e0e, 0px 0px 30px 0px white;
+  border-radius: 50%;
+  position: relative;
+  top: -60px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.game2 .first .scissor:hover {
+  -webkit-box-shadow: 0px 0px 0px 0px #4865f4, 0px 0px 0px 0px #dc2e4e, 0px 0px 0px 0px #40b9ce, 0px 0px 0px 0px #834fe3, 0px 0px 0px 10px #ec9e0e, 0px 0px 30px 0px white;
+          box-shadow: 0px 0px 0px 0px #4865f4, 0px 0px 0px 0px #dc2e4e, 0px 0px 0px 0px #40b9ce, 0px 0px 0px 0px #834fe3, 0px 0px 0px 10px #ec9e0e, 0px 0px 30px 0px white;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  cursor: pointer;
+}
+
+.game2 .secondTwo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.game2 .secondTwo .paper {
+  background: white;
+  height: 120px;
+  width: 120px;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  border: 10px solid #5671f5;
+  -webkit-box-shadow: 0px 0px 0px 2px #dc2e4e, 0px 0px 0px 5px #40b9ce, 0px 0px 0px 10px #834fe3, 0px 0px 0px 15px #ec9e0e, 0px 0px 0px 20px #4865f4, 0px 0px 30px 0px white;
+          box-shadow: 0px 0px 0px 2px #dc2e4e, 0px 0px 0px 5px #40b9ce, 0px 0px 0px 10px #834fe3, 0px 0px 0px 15px #ec9e0e, 0px 0px 0px 20px #4865f4, 0px 0px 30px 0px white;
+  border-radius: 50%;
+  position: relative;
+  top: -50px;
+  left: 60px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.game2 .secondTwo .paper:hover {
+  -webkit-box-shadow: 0px 0px 0px 0px #dc2e4e, 0px 0px 0px 0px #40b9ce, 0px 0px 0px 0px #834fe3, 0px 0px 0px 0px #ec9e0e, 0px 0px 0px 10px #4865f4, 0px 0px 30px 0px white;
+          box-shadow: 0px 0px 0px 0px #dc2e4e, 0px 0px 0px 0px #40b9ce, 0px 0px 0px 0px #834fe3, 0px 0px 0px 0px #ec9e0e, 0px 0px 0px 10px #4865f4, 0px 0px 30px 0px white;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  cursor: pointer;
+}
+
+.game2 .secondTwo .spock {
+  background: white;
+  height: 120px;
+  width: 120px;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  border: 10px solid #52bed1;
+  -webkit-box-shadow: 0px 0px 0px 2px #834fe3, 0px 0px 0px 5px #dc2e4e, 0px 0px 0px 10px #ec9e0e, 0px 0px 0px 15px #4865f4, 0px 0px 0px 20px #40b9ce, 0px 0px 30px 0px white;
+          box-shadow: 0px 0px 0px 2px #834fe3, 0px 0px 0px 5px #dc2e4e, 0px 0px 0px 10px #ec9e0e, 0px 0px 0px 15px #4865f4, 0px 0px 0px 20px #40b9ce, 0px 0px 30px 0px white;
+  border-radius: 50%;
+  position: relative;
+  top: -50px;
+  right: 60px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.game2 .secondTwo .spock:hover {
+  -webkit-box-shadow: 0px 0px 0px 0px #834fe3, 0px 0px 0px 0px #dc2e4e, 0px 0px 0px 0px #ec9e0e, 0px 0px 0px 0px #4865f4, 0px 0px 0px 10px #40b9ce, 0px 0px 30px 0px white;
+          box-shadow: 0px 0px 0px 0px #834fe3, 0px 0px 0px 0px #dc2e4e, 0px 0px 0px 0px #ec9e0e, 0px 0px 0px 0px #4865f4, 0px 0px 0px 10px #40b9ce, 0px 0px 30px 0px white;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  cursor: pointer;
+}
+
+.game2 .lastTwo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.game2 .lastTwo .lizard {
+  background: white;
+  height: 120px;
+  width: 120px;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  border: 10px solid #8c5de5;
+  -webkit-box-shadow: 0px 0px 0px 2px #ec9e0e, 0px 0px 0px 5px #dc2e4e, 0px 0px 0px 10px #40b9ce, 0px 0px 0px 15px #4865f4, 0px 0px 0px 20px #834fe3, 0px 0px 30px 0px white;
+          box-shadow: 0px 0px 0px 2px #ec9e0e, 0px 0px 0px 5px #dc2e4e, 0px 0px 0px 10px #40b9ce, 0px 0px 0px 15px #4865f4, 0px 0px 0px 20px #834fe3, 0px 0px 30px 0px white;
+  border-radius: 50%;
+  position: relative;
+  top: 10px;
+  left: -10px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.game2 .lastTwo .lizard:hover {
+  -webkit-box-shadow: 0px 0px 0px 0px #ec9e0e, 0px 0px 0px 0px #dc2e4e, 0px 0px 0px 0px #40b9ce, 0px 0px 0px 0px #4865f4, 0px 0px 0px 10px #834fe3, 0px 0px 30px 0px white;
+          box-shadow: 0px 0px 0px 0px #ec9e0e, 0px 0px 0px 0px #dc2e4e, 0px 0px 0px 0px #40b9ce, 0px 0px 0px 0px #4865f4, 0px 0px 0px 10px #834fe3, 0px 0px 30px 0px white;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  cursor: pointer;
+}
+
+.game2 .lastTwo .rock {
+  background: white;
+  height: 120px;
+  width: 120px;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  border: 10px solid #dd405d;
+  -webkit-box-shadow: 0px 0px 0px 2px #ec9e0e, 0px 0px 0px 5px #4865f4, 0px 0px 0px 10px #40b9ce, 0px 0px 0px 15px #834fe3, 0px 0px 0px 20px #dc2e4e, 0px 0px 30px 0px white;
+          box-shadow: 0px 0px 0px 2px #ec9e0e, 0px 0px 0px 5px #4865f4, 0px 0px 0px 10px #40b9ce, 0px 0px 0px 15px #834fe3, 0px 0px 0px 20px #dc2e4e, 0px 0px 30px 0px white;
+  border-radius: 50%;
+  position: relative;
+  top: 10px;
+  left: 10px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.game2 .lastTwo .rock:hover {
+  -webkit-box-shadow: 0px 0px 0px 0px #ec9e0e, 0px 0px 0px 0px #4865f4, 0px 0px 0px 0px #40b9ce, 0px 0px 0px 0px #834fe3, 0px 0px 0px 10px #dc2e4e, 0px 0px 30px 0px white;
+          box-shadow: 0px 0px 0px 0px #ec9e0e, 0px 0px 0px 0px #4865f4, 0px 0px 0px 0px #40b9ce, 0px 0px 0px 0px #834fe3, 0px 0px 0px 10px #dc2e4e, 0px 0px 30px 0px white;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  cursor: pointer;
+}
+
+.rules {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
+
+.rules .ruleButton {
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background: transparent;
+  color: white;
+  text-transform: uppercase;
+  padding: 5px 30px;
+  border-radius: 10px;
+  letter-spacing: 2px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-box-shadow: 0px 0px 1px 0px white;
+          box-shadow: 0px 0px 1px 0px white;
+}
+
+.rules .ruleButton:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 5px 0px white;
+          box-shadow: 0px 0px 5px 0px white;
+}
+
+.rulesModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
+  -webkit-animation: showModal 0.5s 1 forwards ease-out;
+          animation: showModal 0.5s 1 forwards ease-out;
+  background-color: white;
+  padding: 10px 50px;
+  border-radius: 10px;
+}
+
+.rulesModal .rulesModalHead {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #3b4363;
+  font-size: 1.2rem;
+  margin: 20px 0px;
+}
+
+.rulesModal .rulesModalHead .modalClose {
+  border: none;
+  background-color: transparent;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.rulesModal .rulesModalHead .modalClose .modalCloseLine {
+  display: inline-block;
+  height: 4px;
+  width: 20px;
+  background-color: #3b4363;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  position: relative;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.rulesModal .rulesModalHead .modalClose .modalCloseLine::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(-90deg);
+          transform: translate(-50%, -50%) rotate(-90deg);
+  display: inline-block;
+  height: 4px;
+  width: 20px;
+  background-color: #3b4363;
+}
+
+.rulesModal .rulesModalHead .modalClose:hover {
+  cursor: pointer;
+}
+
+.rulesModal .rulesModalHead .modalClose:hover .modalCloseLine {
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+
+.rulesModal .rulesModalBody {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 20px 0px 30px;
+}
+
+.blur {
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+@-webkit-keyframes showModal {
+  0% {
+    -webkit-transform: translate(-50%, -50%) scale(0.5);
+            transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes showModal {
+  0% {
+    -webkit-transform: translate(-50%, -50%) scale(0.5);
+            transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.result {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 40vw;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.result .youPicked2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.result .youPicked2 h1 {
+  color: white;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-animation: fadeIn 0.5s 1 forwards ease-out;
+          animation: fadeIn 0.5s 1 forwards ease-out;
+}
+
+.result .youPicked2 .rockPicked {
+  background: white;
+  height: 120px;
+  width: 120px;
+  -webkit-box-shadow: 0px 0px 0px 10px #dd405d, 0px 0px 30px 0px white;
+          box-shadow: 0px 0px 0px 10px #dd405d, 0px 0px 30px 0px white;
+  border-radius: 50%;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-animation: fadeIn 0.5s 1 forwards ease-out;
+          animation: fadeIn 0.5s 1 forwards ease-out;
+}
+
+.result .youPicked2 .paperPicked {
+  background: white;
+  height: 120px;
+  width: 120px;
+  -webkit-box-shadow: 0px 0px 0px 10px #5671f5, 0px 0px 30px 0px white;
+          box-shadow: 0px 0px 0px 10px #5671f5, 0px 0px 30px 0px white;
+  border-radius: 50%;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-animation: fadeIn 0.5s 1 forwards ease-out;
+          animation: fadeIn 0.5s 1 forwards ease-out;
+}
+
+.result .youPicked2 .scissorPicked {
+  background: white;
+  height: 120px;
+  width: 120px;
+  -webkit-box-shadow: 0px 0px 0px 10px #eca922, 0px 0px 30px 0px white;
+          box-shadow: 0px 0px 0px 10px #eca922, 0px 0px 30px 0px white;
+  border-radius: 50%;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-animation: fadeIn 0.5s 1 forwards ease-out;
+          animation: fadeIn 0.5s 1 forwards ease-out;
+}
+
+.result .youPicked2 .spockPicked {
+  background: white;
+  height: 120px;
+  width: 120px;
+  -webkit-box-shadow: 0px 0px 0px 10px #52bed1, 0px 0px 30px 0px white;
+          box-shadow: 0px 0px 0px 10px #52bed1, 0px 0px 30px 0px white;
+  border-radius: 50%;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-animation: fadeIn 0.5s 1 forwards ease-out;
+          animation: fadeIn 0.5s 1 forwards ease-out;
+}
+
+.result .youPicked2 .lizardPicked {
+  background: white;
+  height: 120px;
+  width: 120px;
+  -webkit-box-shadow: 0px 0px 0px 10px #834fe3, 0px 0px 30px 0px white;
+          box-shadow: 0px 0px 0px 10px #834fe3, 0px 0px 30px 0px white;
+  border-radius: 50%;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-animation: fadeIn 0.5s 1 forwards ease-out;
+          animation: fadeIn 0.5s 1 forwards ease-out;
+}
+
+.result .housePicked2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.result .housePicked2 h1 {
+  color: white;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-animation: fadeIn 0.5s 1 forwards ease-out;
+          animation: fadeIn 0.5s 1 forwards ease-out;
+}
+
+.result .housePicked2 .notPicked {
+  background: #3b4363;
+  color: white;
+  height: 120px;
+  width: 120px;
+  -webkit-box-shadow: 0px 0px 0px 10px #606e85, 0px 0px 30px 0px white;
+          box-shadow: 0px 0px 0px 10px #606e85, 0px 0px 30px 0px white;
+  border-radius: 50%;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  font-size: 3rem;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-animation: fadeIn 0.5s 1 forwards ease-out;
+          animation: fadeIn 0.5s 1 forwards ease-out;
+}
+
+.result .housePicked2 .notPicked span {
+  -webkit-animation: blink 0.5s infinite alternate;
+          animation: blink 0.5s infinite alternate;
+}
+
+.result .housePicked2 .rockPicked {
+  background: white;
+  height: 120px;
+  width: 120px;
+  -webkit-box-shadow: 0px 0px 0px 10px #dd405d, 0px 0px 30px 0px white;
+          box-shadow: 0px 0px 0px 10px #dd405d, 0px 0px 30px 0px white;
+  border-radius: 50%;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.result .housePicked2 .paperPicked {
+  background: white;
+  height: 120px;
+  width: 120px;
+  -webkit-box-shadow: 0px 0px 0px 10px #5671f5, 0px 0px 30px 0px white;
+          box-shadow: 0px 0px 0px 10px #5671f5, 0px 0px 30px 0px white;
+  border-radius: 50%;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.result .housePicked2 .scissorPicked {
+  background: white;
+  height: 120px;
+  width: 120px;
+  -webkit-box-shadow: 0px 0px 0px 10px #eca922, 0px 0px 30px 0px white;
+          box-shadow: 0px 0px 0px 10px #eca922, 0px 0px 30px 0px white;
+  border-radius: 50%;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.result .housePicked2 .spockPicked {
+  background: white;
+  height: 120px;
+  width: 120px;
+  -webkit-box-shadow: 0px 0px 0px 10px #52bed1, 0px 0px 30px 0px white;
+          box-shadow: 0px 0px 0px 10px #52bed1, 0px 0px 30px 0px white;
+  border-radius: 50%;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-animation: fadeIn 0.5s 1 forwards ease-out;
+          animation: fadeIn 0.5s 1 forwards ease-out;
+}
+
+.result .housePicked2 .lizardPicked {
+  background: white;
+  height: 120px;
+  width: 120px;
+  -webkit-box-shadow: 0px 0px 0px 10px #834fe3, 0px 0px 30px 0px white;
+          box-shadow: 0px 0px 0px 10px #834fe3, 0px 0px 30px 0px white;
+  border-radius: 50%;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-animation: fadeIn 0.5s 1 forwards ease-out;
+          animation: fadeIn 0.5s 1 forwards ease-out;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.resultPrint {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  width: 50vw;
+}
+
+.resultTitle {
+  color: white;
+  font-size: 3rem;
+  margin: auto;
+  text-transform: uppercase;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-animation: fadeIn 0.5s 1 forwards ease-out;
+          animation: fadeIn 0.5s 1 forwards ease-out;
+}
+
+.middleRes {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.playAgain {
+  border: 1px solid white;
+  background: white;
+  color: #3b4363;
+  padding: 10px 30px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 0px 0px white;
+          box-shadow: 0px 0px 0px 0px white;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  text-transform: uppercase;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-animation: fadeIn 0.5s 0.5s 1 forwards ease-out;
+          animation: fadeIn 0.5s 0.5s 1 forwards ease-out;
+}
+
+.playAgain:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 10px 2px white;
+          box-shadow: 0px 0px 10px 2px white;
+}
+
+.winner {
+  -webkit-animation: waves 0.2s infinite alternate;
+          animation: waves 0.2s infinite alternate;
+}
+
+.party1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 200px;
+  width: 200px;
+  background: url("../images/party.gif");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  -webkit-animation: move1 10s infinite alternate;
+          animation: move1 10s infinite alternate;
+}
+
+.party2 {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 200px;
+  width: 200px;
+  background: url("../images/party.gif");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-animation: move2 10s infinite alternate;
+          animation: move2 10s infinite alternate;
+}
+
+@-webkit-keyframes waves {
+  0% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes waves {
+  0% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes move1 {
+  0% {
+    top: 20%;
+  }
+  100% {
+    top: 80%;
+  }
+}
+
+@keyframes move1 {
+  0% {
+    top: 20%;
+  }
+  100% {
+    top: 80%;
+  }
+}
+
+@-webkit-keyframes move2 {
+  0% {
+    top: 20%;
+  }
+  100% {
+    top: 80%;
+  }
+}
+
+@keyframes move2 {
+  0% {
+    top: 20%;
+  }
+  100% {
+    top: 80%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .gameHeader2 {
+    width: 90vw;
+    margin: 50px;
+  }
+  .game2 {
+    margin-top: 20%;
+  }
+  .game2 .pentagon {
+    height: 250px;
+    width: 250px;
+  }
+  .game2 .first .scissor {
+    height: 90px;
+    width: 90px;
+  }
+  .game2 .secondTwo .spock {
+    height: 90px;
+    width: 90px;
+    top: -40px;
+    right: 30px;
+  }
+  .game2 .secondTwo .paper {
+    height: 90px;
+    width: 90px;
+    top: -40px;
+    left: 30px;
+  }
+  .game2 .lastTwo .lizard {
+    height: 90px;
+    width: 90px;
+    top: 20px;
+    left: 5px;
+  }
+  .game2 .lastTwo .rock {
+    height: 90px;
+    width: 90px;
+    top: 20px;
+    left: -5px;
+  }
+  .rules {
+    right: 50%;
+    -webkit-transform: translateX(50%);
+            transform: translateX(50%);
+  }
+  .rulesModal {
+    max-width: 90vw;
+  }
+  .result {
+    width: 90vw;
+  }
+  .result .youPicked2 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .result .youPicked2 h1 {
+    margin-bottom: 0px;
+    margin-top: 50px;
+    font-size: 1.5rem;
+  }
+  .result .youPicked2 .rockPicked {
+    height: 120px;
+    width: 120px;
+  }
+  .result .youPicked2 .paperPicked {
+    height: 120px;
+    width: 120px;
+  }
+  .result .youPicked2 .scissorPicked {
+    height: 120px;
+    width: 120px;
+  }
+  .result .youPicked2 .spockPicked {
+    height: 120px;
+    width: 120px;
+  }
+  .result .youPicked2 .lizardPicked {
+    height: 120px;
+    width: 120px;
+  }
+  .result .housePicked2 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .result .housePicked2 h1 {
+    margin-bottom: 0px;
+    margin-top: 50px;
+    font-size: 1.5rem;
+  }
+  .result .housePicked2 .notPicked {
+    height: 120px;
+    width: 120px;
+  }
+  .result .housePicked2 .rockPicked {
+    height: 120px;
+    width: 120px;
+  }
+  .result .housePicked2 .paperPicked {
+    height: 120px;
+    width: 120px;
+  }
+  .result .housePicked2 .scissorPicked {
+    height: 120px;
+    width: 120px;
+  }
+  .result .housePicked2 .spockPicked {
+    height: 120px;
+    width: 120px;
+  }
+  .result .housePicked2 .lizardPicked {
+    height: 120px;
+    width: 120px;
+  }
+  .middleRes {
+    position: absolute;
+    bottom: 15%;
+  }
+}
+/*# sourceMappingURL=app2.css.map */

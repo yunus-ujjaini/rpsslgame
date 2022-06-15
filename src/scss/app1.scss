@@ -1,0 +1,570 @@
+@import 'reset';
+@import 'fonts';
+@import 'style';
+
+.mainContainer{
+    width: 100vw;
+    height: 100vh;
+    background:radial-gradient( hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+.gameHeader{
+    display: flex;
+    color: white;
+    width: 50vw;
+    justify-content: space-between;
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 15px;
+    margin: 3vw;
+    padding: 2vw 2vw;
+    .gameName{
+        line-height: 160%;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+    }
+    .score{
+        background-color: white;
+        height: 100%;
+        padding: 0px 5%;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .scoreTitle{
+            color:hsl(229, 64%, 46%);
+            text-transform: uppercase;
+            letter-spacing: 0px;
+            line-height: 100%;
+        }
+        .actualScore{
+            color: hsl(229, 25%, 31%);
+            font-size: 4rem;
+            line-height: 100%;
+        }
+    }
+}
+.game{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vh;
+    .triangle{
+        height: 300px;
+        width: 300px;
+        background: url(../images/bg-triangle.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .firstTwo{
+        display: flex;
+        justify-content: space-between;
+        .paper{
+            background:white;
+            height: 120px;
+            width: 120px;
+            display: grid;
+            place-items: center;
+            border: 10px solid hsl(230, 89%, 65%);
+            box-shadow: 0px 0px 0px 5px hsl(349, 71%, 52%),0px 0px 0px 10px hsl(39, 89%, 49%),0px 0px 0px 20px hsl(230, 89%, 62%),0px 0px 30px 0px white;
+            border-radius: 50%;
+            position: relative;
+            top: -40px;
+            left: -40px;
+            transition: all 0.5s;
+            &:hover{
+                box-shadow: 0px 0px 0px 0px hsl(349, 71%, 52%),0px 0px 0px 0px hsl(39, 89%, 49%),0px 0px 0px 10px hsl(230, 89%, 62%),0px 0px 30px 0px white;
+                transform: scale(0.9);
+                cursor: pointer;
+            }
+        }
+        .scissor{
+            background:white;
+            height: 120px;
+            width: 120px;
+            display: grid;
+            place-items: center;
+            border: 10px solid hsl(40, 84%, 53%);
+            box-shadow: 0px 0px 0px 5px hsl(230, 89%, 62%),0px 0px 0px 10px hsl(349, 71%, 52%),0px 0px 0px 20px hsl(39, 89%, 49%),0px 0px 30px 0px white;
+            border-radius: 50%;
+            position: relative;
+            top: -40px;
+            left: 40px;
+            transition: all 0.5s;
+            &:hover{
+                box-shadow: 0px 0px 0px 0px hsl(230, 89%, 62%),0px 0px 0px 0px hsl(349, 71%, 52%),0px 0px 0px 10px hsl(39, 89%, 49%),0px 0px 30px 0px white;
+                transform: scale(0.9);
+                cursor: pointer;
+            }
+        }
+        
+    }
+    .last{
+        display: flex;
+        justify-content: center;
+        .rock{
+            background:white;
+            height: 120px;
+            width: 120px;
+            display: grid;
+            place-items: center;
+            border: 10px solid hsl(349, 70%, 56%);
+            box-shadow: 0px 0px 0px 5px hsl(39, 89%, 49%),0px 0px 0px 10px hsl(230, 89%, 62%),0px 0px 0px 20px hsl(349, 71%, 52%),0px 0px 30px 0px white;
+            border-radius: 50%;
+            position: relative;
+            top: 0px;
+            left: 0px;
+            transition: all 0.5s;
+            &:hover{
+                box-shadow: 0px 0px 0px 0px hsl(39, 89%, 49%),0px 0px 0px 0px hsl(230, 89%, 62%),0px 0px 0px 10px hsl(349, 71%, 52%),0px 0px 30px 0px white;
+                transform: scale(0.9);
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.rules{
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    .ruleButton{
+        border: 2px solid rgba(255,255,255,0.5);
+        background: transparent;
+        color: white;
+        text-transform: uppercase;
+        padding: 5px 30px;
+        border-radius: 10px;
+        letter-spacing: 2px;
+        transition: all 0.2s;
+        box-shadow: 0px 0px 1px 0px white;
+        &:hover{
+            cursor: pointer;
+            // letter-spacing: 1px;
+            box-shadow: 0px 0px 5px 0px white;
+        }
+    }
+}
+.rulesModal{
+    position:fixed;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    animation: showModal 0.5s 1 forwards ease-out;
+    background-color: white;
+    padding: 10px 50px;
+    border-radius: 10px;
+    .rulesModalHead{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: hsl(229, 25%, 31%);
+        font-size: 1.2rem;
+        margin: 20px 0px;
+        .modalClose{
+            border: none;
+            background-color: transparent;
+            display: grid;
+            place-items: center;
+            transition: all 0.5s;
+            .modalCloseLine{
+                display: inline-block;
+                height: 4px;
+                width: 20px;
+                background-color: hsl(229, 25%, 31%);
+                transform: rotate(45deg);
+                position: relative;
+                transition: all 0.5s;
+                &::after{
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%) rotate(-90deg);
+                    display: inline-block;
+                    height: 4px;
+                    width: 20px;
+                    background-color: hsl(229, 25%, 31%);
+                }
+
+                
+            }
+            &:hover{
+                .modalCloseLine{
+                    transform: rotate(135deg);
+                    
+                }
+                cursor: pointer;
+                
+            }
+        }
+    }
+    .rulesModalBody{
+        display: flex;
+        justify-content: center;
+        margin: 20px 0px 30px;
+    }
+}
+
+.blur{
+    opacity: 0.9;
+    pointer-events: none;
+}
+
+@keyframes showModal {
+    0%{
+        transform: translate(-50%,-50%) scale(0.5);
+        opacity: 0;
+    }
+    100%{
+        transform: translate(-50%,-50%) scale(1);
+        opacity: 1;
+    }
+}
+@keyframes fadeIn {
+    0%{
+        transform:scale(0.5);
+        opacity: 0;
+    }
+    100%{
+        transform:scale(1);
+        opacity: 1;
+    }
+}
+
+.result{
+    display: flex;
+    width: 40vw;
+    justify-content: space-around;
+    transition: all 0.5s;
+    .youPicked{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h1{
+            color: white;
+            text-transform: uppercase;
+            margin-bottom: 50px;
+            transform: scale(0);
+            animation: fadeIn 0.5s 1 forwards ease-out;
+        }
+        .rockPicked{
+            background:white;
+            height: 120px;
+            width: 120px;
+            box-shadow:0px 0px 0px 10px hsl(349, 70%, 56%),0px 0px 30px 0px white;
+            border-radius: 50%;
+            position: relative;
+            top: 0px;
+            left: 0px;
+            transition: all 0.5s;
+            display: grid;
+            place-items: center;
+            transform: scale(0);
+            animation: fadeIn 0.5s 1 forwards ease-out;
+        }
+        .paperPicked{
+            background:white;
+            height: 120px;
+            width: 120px;
+            box-shadow:0px 0px 0px 10px hsl(230, 89%, 65%),0px 0px 30px 0px white;
+            border-radius: 50%;
+            position: relative;
+            top: 0px;
+            left: 0px;
+            transition: all 0.5s;
+            display: grid;
+            place-items: center;
+            transform: scale(0);
+            animation: fadeIn 0.5s 1 forwards ease-out;
+        }
+        .scissorPicked{
+            background:white;
+            height: 120px;
+            width: 120px;
+            box-shadow:0px 0px 0px 10px hsl(40, 84%, 53%),0px 0px 30px 0px white;
+            border-radius: 50%;
+            position: relative;
+            top: 0px;
+            left: 0px;
+            transition: all 0.5s;
+            display: grid;
+            place-items: center;
+            transform: scale(0);
+            animation: fadeIn 0.5s 1 forwards ease-out;
+        }
+    }
+    .housePicked{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h1{
+            color: white;
+            text-transform: uppercase;
+            margin-bottom: 50px;
+            transform: scale(0);
+            animation: fadeIn 0.5s 1 forwards ease-out;
+        }
+        .notPicked{
+            background:hsl(229, 25%, 31%);
+            color: white;
+            height: 120px;
+            width: 120px;
+            box-shadow:0px 0px 0px 10px hsl(217, 16%, 45%),0px 0px 30px 0px white;
+            border-radius: 50%;
+            position: relative;
+            top: 0px;
+            left: 0px;
+            transition: all 0.5s;
+            display: grid;
+            place-items: center;
+            font-size: 3rem;
+            transform: scale(0);
+            animation: fadeIn 0.5s 1 forwards ease-out;
+            span{
+                animation: blink 0.5s infinite alternate;
+            }
+        }
+        .rockPicked{
+            background:white;
+            height: 120px;
+            width: 120px;
+            box-shadow:0px 0px 0px 10px hsl(349, 70%, 56%),0px 0px 30px 0px white;
+            border-radius: 50%;
+            position: relative;
+            top: 0px;
+            left: 0px;
+            transition: all 0.5s;
+            display: grid;
+            place-items: center;
+        }
+        .paperPicked{
+            background:white;
+            height: 120px;
+            width: 120px;
+            box-shadow:0px 0px 0px 10px hsl(230, 89%, 65%),0px 0px 30px 0px white;
+            border-radius: 50%;
+            position: relative;
+            top: 0px;
+            left: 0px;
+            transition: all 0.5s;
+            display: grid;
+            place-items: center;
+            
+        }
+        .scissorPicked{
+            background:white;
+            height: 120px;
+            width: 120px;
+            box-shadow:0px 0px 0px 10px hsl(40, 84%, 53%),0px 0px 30px 0px white;
+            border-radius: 50%;
+            position: relative;
+            top: 0px;
+            left: 0px;
+            transition: all 0.5s;
+            display: grid;
+            place-items: center;
+            
+        }
+    }
+}
+
+@keyframes blink {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+.resultPrint{
+    transition: all 0.5s;
+    width: 50vw;
+}
+.resultTitle{
+    color: white;
+    font-size: 3rem;
+    margin: auto;
+    text-transform: uppercase;
+    transform: scale(0);
+    animation: fadeIn 0.5s 1 forwards ease-out;
+}
+.middleRes{
+    display: grid;
+    place-items: center;
+    
+}
+.playAgain{
+    border: 1px solid white;
+    background: white;
+    color: hsl(229, 25%, 31%);
+    padding: 10px 30px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 0px 0px white;
+    transition: all 0.2s;
+    text-transform: uppercase;
+    transform: scale(0);
+    animation: fadeIn 0.5s 0.5s 1 forwards ease-out;
+    &:hover{
+        cursor: pointer;
+        box-shadow: 0px 0px 10px 2px white;
+        
+    }
+}
+
+.winner{
+    animation: waves 0.2s infinite alternate;
+}
+
+.party1{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 200px;
+    width: 200px;
+    background: url("../images/party.gif");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    transform: rotate(90deg);
+    animation: move1 10s infinite alternate;
+
+}
+.party2{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 200px;
+    width: 200px;
+    background: url("../images/party.gif");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    transform: rotate(-90deg);
+    animation: move2 10s infinite alternate;
+}
+
+@keyframes waves {
+    0%{
+        transform: scale(0.95);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+@keyframes move1{
+    0%{
+        top: 20%;
+    }
+    100%{
+        top: 80%;
+    }
+}
+@keyframes move2{
+    0%{
+        top: 20%;
+    }
+    100%{
+        top: 80%;
+    }
+}
+
+
+
+@media screen and (max-width: 600px)  {
+    .gameHeader{
+        width: 90vw;
+        margin:50px;
+    }
+    .game{
+        margin-top: 20%;
+        .triangle{
+            height: 250px;
+            width: 250px;
+        }
+        .firstTwo{
+            .paper{
+                height: 100px;
+                width: 100px;
+            }
+            .scissor{
+                height: 100px;
+                width: 100px;
+            }
+            
+        }
+        .last{
+            .rock{
+                height: 100px;
+                width: 100px;
+            }
+        }
+    }
+    .rules{
+        right: 50%;
+        transform: translateX(50%);
+    }
+    .rulesModal{
+        max-width: 90vw;
+    }
+    .result{
+        width: 90vw;
+        
+        .youPicked{
+            flex-direction: column-reverse;
+            h1{
+                margin-bottom: 0px;
+                margin-top: 50px;
+                font-size: 1.5rem;
+            }
+            .rockPicked{
+                height: 120px;
+                width: 120px;
+            }
+            .paperPicked{
+                height: 120px;
+                width: 120px;
+            }
+            .scissorPicked{
+                height: 120px;
+                width: 120px;
+            }
+        }
+        .housePicked{
+            flex-direction: column-reverse;
+            h1{
+                margin-bottom: 0px;
+                margin-top: 50px;
+                font-size: 1.5rem;
+            }
+            .notPicked{
+                height: 120px;
+                width: 120px;
+            }
+            .rockPicked{
+                height: 120px;
+                width: 120px;
+            }
+            .paperPicked{
+                height: 120px;
+                width: 120px;
+                
+            }
+            .scissorPicked{
+                height: 120px;
+                width: 120px;
+                
+            }
+        }
+    }
+    .middleRes{
+        position: absolute;
+        bottom: 15%;
+    }
+
+}
